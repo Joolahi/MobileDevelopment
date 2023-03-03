@@ -7,10 +7,10 @@ const MoviesList = (props) => {
     useEffect(() => {
         axios.get('https://api.themoviedb.org/3/movie/now_playing?api_key=875bb04b769cd254a5cd16ded8babc13&language=en-US&page=1')
             .then(response => {
-                console.log(response.data.results);
                 setMovies(response.data.results);
             })
     }, []);
+
 
     if (movies.length === 0) {
         return (
